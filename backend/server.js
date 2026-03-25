@@ -16,6 +16,10 @@ app.use("/api/user", require("./routes/user"));
 app.use("/api/admin", require("./routes/admin"));
 app.use("/api/payment", require("./routes/payment"));
 
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+});
+
 
 const PORT = process.env.PORT || 5000;
 
