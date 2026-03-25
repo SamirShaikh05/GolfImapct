@@ -8,7 +8,6 @@ const admin = require("../middleware/admin");
 // generate draw
 router.post("/draw", auth, admin, async (req, res) => {
   try {
-    // ✅ unique numbers (better)
     const numbersSet = new Set();
     while (numbersSet.size < 5) {
       numbersSet.add(Math.floor(Math.random() * 45) + 1);

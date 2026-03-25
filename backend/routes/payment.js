@@ -11,7 +11,7 @@ router.post("/checkout", auth, async (req, res) => {
       payment_method_types: ["card"],
       mode: "subscription",
 
-      customer_email: user.email, // ✅ auto-fill email
+      customer_email: user.email,
 
       line_items: [
         {
@@ -27,8 +27,8 @@ router.post("/checkout", auth, async (req, res) => {
         },
       ],
 
-      success_url: "http://localhost:5173/success",
-      cancel_url: "http://localhost:5173/subscribe",
+      success_url: "https://golf-imapct.vercel.app/success",
+      cancel_url: "https://golf-imapct.vercel.app/subscribe",
     });
 
     res.json({ url: session.url });
