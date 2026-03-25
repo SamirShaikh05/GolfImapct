@@ -8,7 +8,11 @@ const userSchema = new mongoose.Schema({
   subscriptionType: String,
   charity: String,
   charityPercentage: { type: Number, default: 10 },
-  role: { type: String, default: "user" }
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user"
+  }
 });
 
 module.exports = mongoose.model("User", userSchema);

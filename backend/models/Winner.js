@@ -5,6 +5,6 @@ const winnerSchema = new mongoose.Schema({
   matchType: Number,
   amount: Number,
   status: { type: String, default: "pending" }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model("Winner", winnerSchema);

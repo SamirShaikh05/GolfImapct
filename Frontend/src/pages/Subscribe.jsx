@@ -1,11 +1,16 @@
 export default function Subscribe() {
   const pay = async () => {
-    const res = await fetch("http://localhost:5000/api/payment/checkout", {
-      method: "POST"
-    });
-    const data = await res.json();
-    window.location.href = data.url;
-  };
+  const res = await fetch("http://localhost:5000/api/payment/checkout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": localStorage.getItem("token")
+    }
+  });
+
+  const data = await res.json();
+  window.location.href = data.url;
+};
 
   return (
     <div className="p-10">
